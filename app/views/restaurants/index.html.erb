@@ -1,0 +1,12 @@
+<h1>All restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %> -
+      <%= restaurant.address %>
+      (<%= '*' * restaurant.rating %>) -
+      <%= link_to 'Delete me', restaurant_path(restaurant), method: :delete %>
+    </li>
+  <% end %>
+</ul>
